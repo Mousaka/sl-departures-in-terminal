@@ -53,7 +53,7 @@ def get_sites_from_string(searchstring, selectionmode, platsuppslag_api)
 	if selectionmode
 		select_station stations
 	else
-		site_id = [data["ResponseData"][1], data["ResponseData"][0]["SiteId"]]
+		site_id = [response_data[0]["Name"], response_data[0]["SiteId"]]
 	end	
 end
 
