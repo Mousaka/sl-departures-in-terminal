@@ -15,7 +15,10 @@ Installation
    ```
    gem install json && gem install curb
    ```
-
+   You might need to install libcurl4-openssl-dev in order to install curb gem:
+   ```
+   sudo apt-get install libcurl4-openssl-dev
+   ```
 How to use it
 -------------
 Use it by runnng the script in the terminal:
