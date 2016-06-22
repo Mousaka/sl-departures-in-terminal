@@ -19,6 +19,7 @@ Installation
    ```
    sudo apt-get install libcurl4-openssl-dev
    ```
+   
 How to use it
 -------------
 Use it by runnng the script in the terminal:
