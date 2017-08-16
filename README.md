@@ -5,15 +5,19 @@ Installation
 1. First you must retrieve your own API-keys by signing up at trafiklab.se and then apply for the keys. You need these two:
   * https://www.trafiklab.se/api/sl-realtidsinformation-3/sl-realtidsinformation-3
   * https://www.trafiklab.se/api/sl-platsuppslag/sl-platsuppslag
-2. Once you have your API-keys, insert them into the corresponding variables found in the beginning of the script as strings:
+2. Once you have your API-keys use them to set these two required environment variables like such:
 
-   ```ruby
-   platsuppslag_api = "INSERT YOUR API KEY HERE AS STRING"
-   realtidsinformation3_api = "INSERT YOUR API KEY AS STRING"
+   ```bash
+   export PLATSUPPSLAG_API=<INSERT_API_KEY_HERE>
+   export REALTIDSINFORMATION4_API=<INSERT_API_KEY_HERE>
    ```
 3. You need to be able to run Ruby scripts on your computer and you need to have the two ruby gems json and curb installed. If you already have ruby working in your terminal you can install them by typing following in your terminal:
    ```
    gem install json && gem install curb
+   ```
+   You need ruby-dev to use gem properly
+   ```
+   sudo apt-get install ruby-dev
    ```
    You might need to install libcurl4-openssl-dev in order to install curb gem:
    ```

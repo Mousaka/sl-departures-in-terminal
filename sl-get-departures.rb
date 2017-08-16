@@ -3,8 +3,8 @@ require 'json'
 require 'curb'
 require 'optparse'
 
-platsuppslag_api = "INSERT YOUR API KEY HERE AS STRING"
-realtidsinformation3_api = "INSERT YOUR API KEY AS STRING"
+platsuppslag_api = ENV["PLATSUPPSLAG_API"]
+realtidsinformation4_api = ENV["REALTIDSINFORMATION4_API"]
 
 options = {}
 
@@ -79,10 +79,10 @@ search = ARGV.at(0)
 site = get_sites_from_string search, options[:selectionmode], platsuppslag_api
 site_id = site[1]
 station_name = site[0]
-raw_dep = Curl::Easy.perform("http://api.sl.se/api2/realtimedepartures.json?key=#{realtidsinformation3_api}&siteid=#{site_id}&timewindow=#{time_limit}")
+raw_dep = Curl::Easy.perform("http://api.sl.se/api2/realtimedeparturesV4.json?key=#{realtidsinformation4_api}&siteid=#{site_id}&timewindow=#{time_limit}")
 data_dep = JSON.parse(raw_dep.body_str)
 response_data = data_dep["ResponseData"]
-
+puts response_data
 def load_if_not_empty(response_data, type)
 	if response_data[type].empty?
 		[]
@@ -103,7 +103,7 @@ if !metros.empty?
 	puts "Tunnelbanor"
 end
 metros.each do|metro|
-	puts "\t#{metro['DisplayTime']}\t#{metro['GroupOfLine']} mot #{metro['SafeDestinationName']}"
+	puts "\t#{metro['DisplayTime']}\t#{metro['GroupOfLine']} mot #{metro['Destination']}"
 	nothing = false
 end
 if !buses.empty?
