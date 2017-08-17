@@ -82,7 +82,6 @@ station_name = site[0]
 raw_dep = Curl::Easy.perform("http://api.sl.se/api2/realtimedeparturesV4.json?key=#{realtidsinformation4_api}&siteid=#{site_id}&timewindow=#{time_limit}")
 data_dep = JSON.parse(raw_dep.body_str)
 response_data = data_dep["ResponseData"]
-puts response_data
 def load_if_not_empty(response_data, type)
 	if response_data[type].empty?
 		[]
