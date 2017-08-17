@@ -3,7 +3,7 @@ This is a small Ruby script that allows you to list all departures of a station 
 Installation
 -------------
 1. First you must retrieve your own API-keys by signing up at trafiklab.se and then apply for the keys. You need these two:
-  * https://www.trafiklab.se/api/sl-realtidsinformation-3/sl-realtidsinformation-3
+  * https://www.trafiklab.se/api/sl-realtidsinformation-4/sl-realtidsinformation-4
   * https://www.trafiklab.se/api/sl-platsuppslag/sl-platsuppslag
 2. Once you have your API-keys use them to set these two required environment variables like such:
 
